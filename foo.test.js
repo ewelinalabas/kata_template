@@ -1,9 +1,13 @@
-import { foo, hello } from './foo'
+import { duplicateCount } from './foo'
 
-test('it returns 1', () => {
-  expect(foo).toBe(1);
+test('duplicateCount 0', () => {
+  expect(duplicateCount("")).toBe(0);
 });
 
-test('hello', () => {
-  expect(hello("Tomek")).toBe("Hello Tomek!");
+test('duplicateCount abcd', () => {
+  expect(duplicateCount("abdc")).toBe(0);
+});
+
+test('duplicateCount aabbcd', () => {
+  expect(duplicateCount("Aabbdc")).toBe(2);
 });
